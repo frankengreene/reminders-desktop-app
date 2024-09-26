@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import (
     QPushButton, QMessageBox, QTableWidget, QTableWidgetItem, QHeaderView,
     QDialog, QTextEdit, QDateTimeEdit, QComboBox, QColorDialog, QGroupBox
 )
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, QDateTime
 from database import Database
 from scheduler import TaskScheduler
@@ -149,6 +150,8 @@ class ToDoApp(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("SkyWater Reminders")
+        app_icon = QIcon("icon\SKYT.png")
+        self.setWindowIcon(app_icon)
         self.resize(800, 600)
 
         self.db = Database()
